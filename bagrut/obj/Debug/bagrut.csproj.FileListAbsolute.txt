@@ -1,0 +1,8 @@
+C:\Users\avido\source\repos\computer science\bagrut\bin\Debug\bagrut.exe.config
+C:\Users\avido\source\repos\computer science\bagrut\bin\Debug\bagrut.exe
+C:\Users\avido\source\repos\computer science\bagrut\bin\Debug\bagrut.pdb
+C:\Users\avido\source\repos\computer science\bagrut\obj\Debug\bagrut.csproj.AssemblyReference.cache
+C:\Users\avido\source\repos\computer science\bagrut\obj\Debug\bagrut.csproj.CoreCompileInputs.cache
+C:\Users\avido\source\repos\computer science\bagrut\obj\Debug\bagrut.exe
+C:\Users\avido\source\repos\computer science\bagrut\obj\Debug\bagrut.pdb
+C:\Users\avido\source\repos\computer science\bagrut\obj\Debug\bagrut.exe.config
