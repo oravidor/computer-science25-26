@@ -1,0 +1,7 @@
+C:\Users\Or\source\repos\computer-science25-26\recutsion\bin\Debug\recutsion.exe.config
+C:\Users\Or\source\repos\computer-science25-26\recutsion\bin\Debug\recutsion.exe
+C:\Users\Or\source\repos\computer-science25-26\recutsion\bin\Debug\recutsion.pdb
+C:\Users\Or\source\repos\computer-science25-26\recutsion\obj\Debug\recutsion.csproj.AssemblyReference.cache
+C:\Users\Or\source\repos\computer-science25-26\recutsion\obj\Debug\recutsion.csproj.CoreCompileInputs.cache
+C:\Users\Or\source\repos\computer-science25-26\recutsion\obj\Debug\recutsion.exe
+C:\Users\Or\source\repos\computer-science25-26\recutsion\obj\Debug\recutsion.pdb

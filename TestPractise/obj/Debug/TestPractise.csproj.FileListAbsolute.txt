@@ -1,0 +1,8 @@
+C:\Users\Or\source\repos\computer-science25-26\TestPractise\obj\Debug\TestPractise.csproj.AssemblyReference.cache
+C:\Users\Or\source\repos\computer-science25-26\TestPractise\obj\Debug\TestPractise.csproj.CoreCompileInputs.cache
+C:\Users\Or\source\repos\computer-science25-26\TestPractise\bin\Debug\TestPractise.exe.config
+C:\Users\Or\source\repos\computer-science25-26\TestPractise\bin\Debug\TestPractise.exe
+C:\Users\Or\source\repos\computer-science25-26\TestPractise\bin\Debug\TestPractise.pdb
+C:\Users\Or\source\repos\computer-science25-26\TestPractise\obj\Debug\TestPractise.exe
+C:\Users\Or\source\repos\computer-science25-26\TestPractise\obj\Debug\TestPractise.pdb
+C:\Users\Or\source\repos\computer-science25-26\TestPractise\obj\Debug\TestPractise.exe.config
