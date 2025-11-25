@@ -1,0 +1,8 @@
+C:\Users\avido\source\repos\computer-science25-26\QueueT\bin\Debug\QueueT.exe.config
+C:\Users\avido\source\repos\computer-science25-26\QueueT\bin\Debug\QueueT.exe
+C:\Users\avido\source\repos\computer-science25-26\QueueT\bin\Debug\QueueT.pdb
+C:\Users\avido\source\repos\computer-science25-26\QueueT\obj\Debug\QueueT.csproj.AssemblyReference.cache
+C:\Users\avido\source\repos\computer-science25-26\QueueT\obj\Debug\QueueT.csproj.CoreCompileInputs.cache
+C:\Users\avido\source\repos\computer-science25-26\QueueT\obj\Debug\QueueT.exe
+C:\Users\avido\source\repos\computer-science25-26\QueueT\obj\Debug\QueueT.pdb
+C:\Users\avido\source\repos\computer-science25-26\QueueT\obj\Debug\QueueT.exe.config
