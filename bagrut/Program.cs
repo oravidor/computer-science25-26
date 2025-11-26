@@ -1,11 +1,11 @@
-﻿using nodeT;
+﻿using bagruts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace bagrut
+namespace Bagruts
 {
     internal class Program
     {

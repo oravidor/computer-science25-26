@@ -3,19 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.14.36616.10
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "recutsion", "recutsion\recutsion.csproj", "{1F2E6444-BE53-412B-9F28-69C69E5D1566}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Recutsion", "recutsion\Recutsion.csproj", "{1F2E6444-BE53-412B-9F28-69C69E5D1566}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "complexity", "complexity\complexity.csproj", "{CA1A1649-6270-4897-A041-DC351E26D4DE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Complexity", "complexity\Complexity.csproj", "{CA1A1649-6270-4897-A041-DC351E26D4DE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "beads", "beads\beads.csproj", "{873EA531-B706-455C-AB15-0DC901581D8C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Beads", "beads\Beads.csproj", "{873EA531-B706-455C-AB15-0DC901581D8C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nodeT", "nodeT\nodeT.csproj", "{249B302A-81B8-4415-BA24-C6D414380A28}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NodeT", "nodeT\NodeT.csproj", "{249B302A-81B8-4415-BA24-C6D414380A28}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "oop", "oop\oop.csproj", "{7FDA70B6-E31F-49F3-9598-FF2A50A5AEC8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oop", "oop\Oop.csproj", "{7FDA70B6-E31F-49F3-9598-FF2A50A5AEC8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bagrut", "bagrut\bagrut.csproj", "{05B263BC-E512-4CC0-A073-C1C185E76225}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bagruts", "bagrut\Bagruts.csproj", "{05B263BC-E512-4CC0-A073-C1C185E76225}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestPractice", "TestPractise\TestPractice.csproj", "{91848590-95D6-4904-949B-CEE16FC8D162}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestsPractice", "TestPractise\TestsPractice.csproj", "{91848590-95D6-4904-949B-CEE16FC8D162}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QueueT", "QueueT\QueueT.csproj", "{93A42500-CA8A-4441-8012-53ED7DEDCF74}"
 EndProject

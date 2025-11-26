@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace nodeT
+namespace NodeT
 {
     internal class Program
     {

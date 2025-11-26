@@ -3,12 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\avido\\source\\repos\\computer-science25-26\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{93A42500-CA8A-4441-8012-53ED7DEDCF74}|QueueT\\QueueT.csproj|c:\\users\\avido\\source\\repos\\computer-science25-26\\queuet\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{93A42500-CA8A-4441-8012-53ED7DEDCF74}|QueueT\\QueueT.csproj|solutionrelative:queuet\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{93A42500-CA8A-4441-8012-53ED7DEDCF74}|QueueT\\QueueT.csproj|c:\\users\\avido\\source\\repos\\computer-science25-26\\queuet\\queue.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{93A42500-CA8A-4441-8012-53ED7DEDCF74}|QueueT\\QueueT.csproj|solutionrelative:queuet\\queue.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1F2E6444-BE53-412B-9F28-69C69E5D1566}|recutsion\\recutsion.csproj|c:\\users\\avido\\source\\repos\\computer-science25-26\\recutsion\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1F2E6444-BE53-412B-9F28-69C69E5D1566}|recutsion\\recutsion.csproj|solutionrelative:recutsion\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,7 +14,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -34,28 +30,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Queue.cs",
-              "DocumentMoniker": "C:\\Users\\avido\\source\\repos\\computer-science25-26\\QueueT\\Queue.cs",
-              "RelativeDocumentMoniker": "QueueT\\Queue.cs",
-              "ToolTip": "C:\\Users\\avido\\source\\repos\\computer-science25-26\\QueueT\\Queue.cs",
-              "RelativeToolTip": "QueueT\\Queue.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-25T11:59:36.337Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\avido\\source\\repos\\computer-science25-26\\QueueT\\Program.cs",
-              "RelativeDocumentMoniker": "QueueT\\Program.cs",
-              "ToolTip": "C:\\Users\\avido\\source\\repos\\computer-science25-26\\QueueT\\Program.cs",
-              "RelativeToolTip": "QueueT\\Program.cs",
-              "ViewState": "AgIAAKUAAAAAAAAAAAAAwLYAAAAAAAAAAAAAAA==",
+              "DocumentMoniker": "C:\\Users\\avido\\source\\repos\\computer-science25-26\\recutsion\\Program.cs",
+              "RelativeDocumentMoniker": "recutsion\\Program.cs",
+              "ToolTip": "C:\\Users\\avido\\source\\repos\\computer-science25-26\\recutsion\\Program.cs",
+              "RelativeToolTip": "recutsion\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-25T11:49:22.718Z",
+              "WhenOpened": "2025-11-26T09:20:04.008Z",
               "EditorCaption": ""
             }
           ]
