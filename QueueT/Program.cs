@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
@@ -17,6 +18,18 @@ namespace QueueT
             a19.Insert(2);
             CalculateDifferenceQueue(a19);
 
+            Queue<int> a21 = new Queue<int>();
+            a21.Insert(5);
+            a21.Insert(-2);
+            a21.Insert(8);
+            a21.Insert(-1);
+            a21.Insert(0);
+            a21.Insert(3);
+            RearrangeQueue(a21);
+
+            Queue<int> a25 = new Queue<int>();
+            a25.Insert(200);
+            bool result = IsElementInQueueRec(a25, 100);
         }
 
         #region 5a1
@@ -179,6 +192,165 @@ namespace QueueT
                 }
             }
             return result;
+        }
+
+        #endregion
+
+        #region 5a2
+
+        public static void RearrangeQueue(Queue<int> queue)
+        {
+            Queue<int> nagative = new Queue<int>();
+            Queue<int> positive = new Queue<int>();
+            while (!queue.IsEmpty())
+            {
+                int val = queue.Remove();
+                if (val >= 0)
+                    positive.Insert(val);
+                else
+                    nagative.Insert(val);
+            }
+            while (!nagative.IsEmpty())
+                queue.Insert(nagative.Remove());
+            while (!positive.IsEmpty())
+                queue.Insert(positive.Remove());
+        }
+
+        public static void ReverseQueue(Queue<int> queue)
+        {
+            Stack<int> stack = new Stack<int>();
+            while (!queue.IsEmpty())
+                stack.Push(queue.Remove());
+            while (!stack.IsEmpty())
+                queue.Insert(stack.Pop());
+        }
+
+        public static bool IsPalindromeQueue<T>(Queue<T> q)
+        {
+            Stack<T> stack = new Stack<T>();
+            Queue<T> temp = new Queue<T>();
+            while (!q.IsEmpty())
+            {
+                var val = q.Remove();
+                stack.Push(val);
+                temp.Insert(val);
+            }
+            bool isPalindrome = true;
+            while (!stack.IsEmpty())
+            {
+                var fromTemp = temp.Remove();
+                var fromStack = stack.Pop();
+                if (!fromTemp.Equals(fromStack))
+                    isPalindrome = false;
+                temp.Insert(fromTemp);
+            }
+            while (!temp.IsEmpty())
+                q.Insert(temp.Remove());
+            return isPalindrome;
+        }
+
+        public static int CountQueueElementsRec(Queue<int> queue)
+        {
+            if (queue.IsEmpty())
+                return 0;
+            int val = queue.Remove();
+            int count = 1 + CountQueueElementsRec(queue);
+            queue.Insert(val);
+            for (int i = 0; i < count - 1; i++)
+                queue.Insert(queue.Remove());
+            return count;
+        }
+
+        public static bool IsElementInQueueRec(Queue<int> q, int element)
+        {
+            if (q.IsEmpty())
+                return false;
+            int x = q.Remove();
+            if (x == element)
+            {
+                Queue<int> temp1 = new Queue<int>();
+                while (!q.IsEmpty())
+                    temp1.Insert(q.Remove());
+                q.Insert(x);
+                while (!temp1.IsEmpty())
+                    q.Insert(temp1.Remove());
+                return true;
+            }
+            bool result = IsElementInQueueRec(q, element);
+            Queue<int> temp = new Queue<int>();
+            while (!q.IsEmpty())
+                temp.Insert(q.Remove());
+            q.Insert(x);
+            while (!temp.IsEmpty())
+                q.Insert(temp.Remove());
+            return result;
+        }
+
+        public static void MergeQueues(Queue<string> q1, Queue<string> q2)
+        {
+            Queue<string> temp = new Queue<string>();
+            while (!q1.IsEmpty() && !q2.IsEmpty())
+            {
+                temp.Insert(q2.Remove());
+                temp.Insert(q1.Remove());
+            }
+            while (!q1.IsEmpty())
+                temp.Insert(q1.Remove());
+            while (!q2.IsEmpty())
+                temp.Insert(q2.Remove());
+            while (!temp.IsEmpty())
+                q2.Insert(temp.Remove());
+        }
+
+        public static void DecodeSecretMessage(Queue<char> lettersQueue, Queue<int> lengthsQueue)
+        {
+            Queue<char> lettersCopy = new Queue<char>();
+            Queue<int> lengthsCopy = new Queue<int>();
+            Queue<char> tempLetters = new Queue<char>();
+            while (!lettersQueue.IsEmpty())
+            {
+                char c = lettersQueue.Remove();
+                lettersCopy.Insert(c);
+                tempLetters.Insert(c);
+            }
+            while (!tempLetters.IsEmpty())
+                lettersQueue.Insert(tempLetters.Remove());
+            Queue<int> tempLengths = new Queue<int>();
+            while (!lengthsQueue.IsEmpty())
+            {
+                int len = lengthsQueue.Remove();
+                lengthsCopy.Insert(len);
+                tempLengths.Insert(len);
+            }
+            while (!tempLengths.IsEmpty())
+                lengthsQueue.Insert(tempLengths.Remove());
+            string message = "";
+            while (!lengthsCopy.IsEmpty())
+            {
+                int wordLength = lengthsCopy.Remove();
+                Queue<char> check = new Queue<char>();
+                int available = 0;
+                while (!lettersCopy.IsEmpty() && available < wordLength)
+                {
+                    check.Insert(lettersCopy.Remove());
+                    available++;
+                }
+                if (available < wordLength)
+                {
+                    Console.WriteLine("ERROR");
+                    return;
+                }
+                while (!check.IsEmpty())
+                    message += check.Remove();
+                if (!lengthsCopy.IsEmpty())
+                    message += " ";
+            }
+            if (!lettersCopy.IsEmpty())
+            {
+                Console.WriteLine("ERROR");
+                return;
+            }
+            Console.WriteLine(message);
         }
 
         #endregion

@@ -243,7 +243,22 @@ namespace NodeT
 
         public static Node<T> NoDuply<T>(Node<T> head)
         {
-
+            if (head == null || head.GetNext() == null)
+                return head;
+            Node<T> current = head;
+            while (current != null)
+            {
+                Node<T> runner = current;
+                while (runner.GetNext() != null)
+                {
+                    if (runner.GetNext().GetValue().Equals(current.GetValue()))
+                        runner.SetNext(runner.GetNext().GetNext());
+                    else
+                        runner = runner.GetNext();
+                }
+                current = current.GetNext();
+            }
+            return head;
         }
 
         public static Node<int> ListsUnion(Node<int> list1, Node<int> list2)
@@ -447,8 +462,152 @@ namespace NodeT
 
         public static Node<int> SortedUnionNew(Node<int> list1, Node<int> list2)
         {
-
+            Node<int> p1 = list1;
+            Node<int> p2 = list2;
+            Node<int> resultHead = null;
+            Node<int> resultTail = null;
+            void AddToResult(int value)
+            {
+                if (resultHead == null)
+                {
+                    resultHead = new Node<int>(value);
+                    resultTail = resultHead;
+                    return;
+                }
+                if (resultTail.GetValue() == value)
+                    return;
+                resultTail.SetNext(new Node<int>(value));
+                resultTail = resultTail.GetNext();
+            }
+            while (p1 != null && p2 != null)
+            {
+                int v1 = p1.GetValue();
+                int v2 = p2.GetValue();
+                if (v1 < v2)
+                {
+                    AddToResult(v1);
+                    p1 = p1.GetNext();
+                }
+                else if (v2 < v1)
+                {
+                    AddToResult(v2);
+                    p2 = p2.GetNext();
+                }
+                else
+                {
+                    AddToResult(v1);
+                    p1 = p1.GetNext();
+                    p2 = p2.GetNext();
+                }
+            }
+            while (p1 != null)
+            {
+                AddToResult(p1.GetValue());
+                p1 = p1.GetNext();
+            }
+            while (p2 != null)
+            {
+                AddToResult(p2.GetValue());
+                p2 = p2.GetNext();
+            }
+            return resultHead;
         }
+
+        public static Node<int> InsertIntoSortedList(Node<int> head, int number)
+        {
+            if (head == null)
+                return new Node<int>(number);
+            if (number <= head.GetValue())
+            {
+                Node<int> newHead = new Node<int>(number);
+                newHead.SetNext(head);
+                return newHead;
+            }
+            Node<int> current = head;
+            while (current.GetNext() != null && current.GetNext().GetValue() < number)
+                current = current.GetNext();
+            Node<int> newNode = new Node<int>(number);
+            newNode.SetNext(current.GetNext());
+            current.SetNext(newNode);
+            return head;
+        }
+
+        public static Node<int> InsertSorted(Node<int> head, Node<int> newNode)
+        {
+            if (newNode == null)
+                return CopyList(head);
+            Node<int> nodeToInsert = new Node<int>(newNode.GetValue());
+            if (head == null || nodeToInsert.GetValue() <= head.GetValue())
+            {
+                nodeToInsert.SetNext(CopyList(head));
+                return nodeToInsert;
+            }
+            Node<int> newHead = new Node<int>(head.GetValue());
+            Node<int> curNew = newHead;
+            Node<int> curOld = head.GetNext();
+            bool inserted = false;
+            while (curOld != null)
+            {
+                if (!inserted && nodeToInsert.GetValue() <= curOld.GetValue())
+                {
+                    curNew.SetNext(nodeToInsert);
+                    curNew = nodeToInsert;
+                    inserted = true;
+                }
+                Node<int> copied = new Node<int>(curOld.GetValue());
+                curNew.SetNext(copied);
+                curNew = copied;
+                curOld = curOld.GetNext();
+            }
+            if (!inserted)
+                curNew.SetNext(nodeToInsert);
+            return newHead;
+        }
+        public static Node<int> CopyList(Node<int> head)
+        {
+            if (head == null)
+                return null;
+            Node<int> newHead = new Node<int>(head.GetValue());
+            Node<int> curNew = newHead;
+            Node<int> curOld = head.GetNext();
+            while (curOld != null)
+            {
+                Node<int> copied = new Node<int>(curOld.GetValue());
+                curNew.SetNext(copied);
+                curNew = copied;
+                curOld = curOld.GetNext();
+            }
+            return newHead;
+        }
+
+        public static Node<int> InsertionSortInPlace(Node<int> head)
+        {
+            if (head == null || head.GetNext() == null)
+                return head;
+            Node<int> sortedHead = null; 
+            while (head != null)
+            {
+                Node<int> current = head; 
+                head = head.GetNext();    
+                current.SetNext(null);   
+
+                if (sortedHead == null || current.GetValue() <= sortedHead.GetValue())
+                {
+                    current.SetNext(sortedHead);
+                    sortedHead = current;
+                }
+                else
+                {
+                    Node<int> sortedCurrent = sortedHead;
+                    while (sortedCurrent.GetNext() != null && sortedCurrent.GetNext().GetValue() < current.GetValue())
+                        sortedCurrent = sortedCurrent.GetNext();
+                    current.SetNext(sortedCurrent.GetNext());
+                    sortedCurrent.SetNext(current);
+                }
+            }
+            return sortedHead;
+        }
+
 
         #endregion
 

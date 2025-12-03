@@ -228,34 +228,73 @@ namespace Bagruts
             }
         }
 
-        internal class Store
+        public class Store
         {
-            private Node<Game> lst;
-            public Store(Node<Game> lst)
-            {
-                this.lst = lst;
-            }
-
-            //א
+            public Node<Game> lst;
+            // סעיף א
             public int Remove(int n, int pr)
             {
-                Node<Game> prev = lst;
-                Node<Game> current = lst;
-                int count = 0;
-                while (n > 0 && current != null)
+                int removed = 0;
+                while (lst != null && removed < n && lst.GetValue().GetPrice() == pr)
                 {
-                    if(lst.GetValue().GetPrice() == pr)
+                    lst = lst.GetNext();
+                    removed++;
+                }
+                Node<Game> current = lst;
+                while (current != null && removed < n)
+                {
+                    Node<Game> nextNode = current.GetNext();
+                    while (nextNode != null && removed < n && nextNode.GetValue().GetPrice() == pr)
                     {
-                        n -= 1;
-                        count++;
-                        prev.SetNext(current.GetNext());
+                        nextNode = nextNode.GetNext();
+                        removed++;
+                        current.SetNext(nextNode); 
                     }
-                    prev = current;
                     current = current.GetNext();
                 }
-                return count;
+                return removed;
+            }
+
+            // סעיף ב
+            public int RemoveCheap(int num)
+            {
+                if (lst == null) return 0;
+                int minPrice = lst.GetValue().GetPrice();
+                Node<Game> current = lst.GetNext();
+                while (current != null)
+                {
+                    int price = current.GetValue().GetPrice();
+                    if (price < minPrice)
+                        minPrice = price;
+                    current = current.GetNext();
+                }
+                int totalRemoved = 0;
+                int remainingToRemove = num;
+                while (remainingToRemove > 0)
+                {
+                    int removedThisRound = Remove(remainingToRemove, minPrice);
+                    totalRemoved += removedThisRound * minPrice;
+                    remainingToRemove -= removedThisRound;
+                    if (remainingToRemove > 0)
+                    {
+                        minPrice = int.MaxValue;
+                        current = lst;
+                        while (current != null)
+                        {
+                            int price = current.GetValue().GetPrice();
+                            if (price < minPrice)
+                                minPrice = price;
+                            current = current.GetNext();
+                        }
+                    }
+                }
+
+                return totalRemoved;
             }
         }
+
+
+
 
         #endregion
 

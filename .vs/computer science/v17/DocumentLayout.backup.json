@@ -3,8 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\avido\\source\\repos\\computer-science25-26\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1F2E6444-BE53-412B-9F28-69C69E5D1566}|recutsion\\recutsion.csproj|c:\\users\\avido\\source\\repos\\computer-science25-26\\recutsion\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1F2E6444-BE53-412B-9F28-69C69E5D1566}|recutsion\\recutsion.csproj|solutionrelative:recutsion\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{249B302A-81B8-4415-BA24-C6D414380A28}|nodeT\\NodeT.csproj|c:\\users\\avido\\source\\repos\\computer-science25-26\\nodet\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{249B302A-81B8-4415-BA24-C6D414380A28}|nodeT\\NodeT.csproj|solutionrelative:nodet\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{249B302A-81B8-4415-BA24-C6D414380A28}|nodeT\\NodeT.csproj|c:\\users\\avido\\source\\repos\\computer-science25-26\\nodet\\node.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{249B302A-81B8-4415-BA24-C6D414380A28}|nodeT\\NodeT.csproj|solutionrelative:nodet\\node.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -32,13 +36,26 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\avido\\source\\repos\\computer-science25-26\\recutsion\\Program.cs",
-              "RelativeDocumentMoniker": "recutsion\\Program.cs",
-              "ToolTip": "C:\\Users\\avido\\source\\repos\\computer-science25-26\\recutsion\\Program.cs",
-              "RelativeToolTip": "recutsion\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAALAAAAAAAAAA==",
+              "DocumentMoniker": "C:\\Users\\avido\\source\\repos\\computer-science25-26\\nodeT\\Program.cs",
+              "RelativeDocumentMoniker": "nodeT\\Program.cs",
+              "ToolTip": "C:\\Users\\avido\\source\\repos\\computer-science25-26\\nodeT\\Program.cs",
+              "RelativeToolTip": "nodeT\\Program.cs",
+              "ViewState": "AgIAADsCAAAAAAAAAAAAAEYCAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-26T09:20:04.008Z",
+              "WhenOpened": "2025-12-03T11:48:49.054Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Node.cs",
+              "DocumentMoniker": "C:\\Users\\avido\\source\\repos\\computer-science25-26\\nodeT\\Node.cs",
+              "RelativeDocumentMoniker": "nodeT\\Node.cs",
+              "ToolTip": "C:\\Users\\avido\\source\\repos\\computer-science25-26\\nodeT\\Node.cs",
+              "RelativeToolTip": "nodeT\\Node.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAAAuwDsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-03T11:54:48.939Z",
               "EditorCaption": ""
             }
           ]
