@@ -298,6 +298,26 @@ namespace Bagruts
 
         #endregion
 
+        #region 12
+
+        //ב1
+        /* a: int i = 1
+         * b: int i = 3
+         * c: int i = 4
+         * d: int i = 9
+         * bd: int i = 11
+         * ac: int i = 6
+         */
+
+        //ב2
+        /* 1: Foo3, T
+         * 2: Foo1, F
+         * 3: Foo1, F
+         * 4: Foo4, Foo2, T
+         * 5: Foo1, F
+         */
+        #endregion
+
         #endregion
 
     }
