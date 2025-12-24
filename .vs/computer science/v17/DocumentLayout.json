@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\avido\\source\\repos\\computer-science25-26\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{05B263BC-E512-4CC0-A073-C1C185E76225}|bagrut\\Bagruts.csproj|c:\\users\\avido\\source\\repos\\computer-science25-26\\bagrut\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{05B263BC-E512-4CC0-A073-C1C185E76225}|bagrut\\Bagruts.csproj|solutionrelative:bagrut\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6A3FB9A2-4DAA-43C4-868B-7A83A6784873}|BinaryTree\\BinaryTree.csproj|c:\\users\\avido\\source\\repos\\computer-science25-26\\binarytree\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6A3FB9A2-4DAA-43C4-868B-7A83A6784873}|BinaryTree\\BinaryTree.csproj|solutionrelative:binarytree\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -32,13 +32,13 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\avido\\source\\repos\\computer-science25-26\\bagrut\\Program.cs",
-              "RelativeDocumentMoniker": "bagrut\\Program.cs",
-              "ToolTip": "C:\\Users\\avido\\source\\repos\\computer-science25-26\\bagrut\\Program.cs",
-              "RelativeToolTip": "bagrut\\Program.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAowCwBAAASAAAAAAAAAA==",
+              "DocumentMoniker": "C:\\Users\\avido\\source\\repos\\computer-science25-26\\BinaryTree\\Program.cs",
+              "RelativeDocumentMoniker": "BinaryTree\\Program.cs",
+              "ToolTip": "C:\\Users\\avido\\source\\repos\\computer-science25-26\\BinaryTree\\Program.cs",
+              "RelativeToolTip": "BinaryTree\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAK8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-03T13:09:32.731Z",
+              "WhenOpened": "2025-12-15T08:48:55.1Z",
               "EditorCaption": ""
             }
           ]

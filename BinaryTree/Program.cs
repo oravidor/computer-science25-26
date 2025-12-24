@@ -135,6 +135,40 @@ namespace BinaryTree
             return count + CountGrandparents(tree.GetLeft()) + CountGrandparents(tree.GetRight());
         }
 
+        public static bool AllValuesAreOdd(BinNode<int> t)
+        {
+            if (t == null)
+                return true;
+            return t.GetValue() % 2 != 0 && AllValuesAreOdd(t.GetLeft()) && AllValuesAreOdd(t.GetRight());
+        }
+        public static bool HasIdenticalSiblings(BinNode<int> t)
+        {
+            if (t == null)
+                return false;
+            if (t.HasLeft() && t.HasRight())
+                if (t.GetLeft().GetValue() == t.GetRight().GetValue())
+                    return true;
+            return HasIdenticalSiblings(t.GetLeft()) || HasIdenticalSiblings(t.GetRight());
+        }
+
+        public static int CountEvenNodes(BinNode<int> tree) 
+        {
+            if (tree == null)
+                return 0;
+            int count = (tree.GetValue() % 2 == 0) ? 1 : 0;
+            return count + CountEvenNodes(tree.GetLeft()) + CountEvenNodes(tree.GetRight());
+        }
+
+        public static int CountNodesWithTwoIdenticalChildren(BinNode<int> tree)
+        {
+            if (tree == null)
+                return 0;
+            int me = 0;
+            if (tree.HasLeft() && tree.HasRight())
+                if (tree.GetLeft().GetValue() == tree.GetRight().GetValue())
+                    me = 1;
+            return me + CountNodesWithTwoIdenticalChildren(tree.GetLeft()) + CountNodesWithTwoIdenticalChildren(tree.GetRight());
+        }
 
         #endregion
     }
