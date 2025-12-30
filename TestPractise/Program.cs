@@ -11,6 +11,12 @@ namespace TestsPractice
         static void Main(string[] args)
         {
             int sum = CalcCheckDigit(869419);
+
+            Queue<int> q = new Queue<int>();
+            q.Insert(1);
+            q.Insert(2);
+            q.Insert(3);
+            sum = SumQueue(q);
         }
 
         #region 24.11.25
@@ -36,9 +42,9 @@ namespace TestsPractice
 
         public static int CalcCheckDigit(int number)
         {
-           if(number < 10)
+            if (number < 10)
                 return number;
-           return CalcCheckDigit(findnumber(number));
+            return CalcCheckDigit(findnumber(number));
         }
         public static int findnumber(int number)
         {
@@ -49,7 +55,7 @@ namespace TestsPractice
 
         public static int MaxAdjacentDifference(Node<int> head)
         {
-            if(head == null || !head.HasNext())
+            if (head == null || !head.HasNext())
                 return int.MinValue;
             int maxDiff = int.MinValue;
             while (head.HasNext())
@@ -61,6 +67,34 @@ namespace TestsPractice
         }
 
 
+
+        #endregion
+
+        #region queue 19.12.25
+
+        #region Q1
+        //א
+        static int SumQueue(Queue<int> queue)
+        {
+            if (queue.IsEmpty())
+                return 0;
+            int count = 0;
+            int num = 0;
+            Queue<int> temp = new Queue<int>();
+            while (!temp.IsEmpty())
+            {
+                num = queue.Head();
+                temp.Insert(queue.Remove());
+                count++;
+            }
+            while (!temp.IsEmpty())
+                queue.Insert(temp.Remove());
+            if (count == 1)
+                return 2 * queue.Head();
+            return queue.Head() + num;
+        }
+
+        #endregion
 
         #endregion
     }

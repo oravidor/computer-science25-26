@@ -1,0 +1,8 @@
+C:\Users\avido\source\repos\computer-science25-26\TestPractise\bin\Debug\TestPractise.exe.config
+C:\Users\avido\source\repos\computer-science25-26\TestPractise\bin\Debug\TestPractise.exe
+C:\Users\avido\source\repos\computer-science25-26\TestPractise\bin\Debug\TestPractise.pdb
+C:\Users\avido\source\repos\computer-science25-26\TestPractise\obj\Debug\TestsPractice.csproj.AssemblyReference.cache
+C:\Users\avido\source\repos\computer-science25-26\TestPractise\obj\Debug\TestPractise.exe.config
+C:\Users\avido\source\repos\computer-science25-26\TestPractise\obj\Debug\TestsPractice.csproj.CoreCompileInputs.cache
+C:\Users\avido\source\repos\computer-science25-26\TestPractise\obj\Debug\TestPractise.exe
+C:\Users\avido\source\repos\computer-science25-26\TestPractise\obj\Debug\TestPractise.pdb
