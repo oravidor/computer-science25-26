@@ -377,17 +377,193 @@ namespace BinaryTree
             if (t == null)
                 return;
             if (t.HasLeft() && t.HasRight())
-            {
-                int value = t.GetValue();
-                int leftVal = t.GetLeft().GetValue();
-                int rightVal = t.GetRight().GetValue();
-                if (value > leftVal || value > rightVal)
-                    Console.WriteLine(value);
-            }
+                if (t.GetValue() > t.GetLeft().GetValue() || t.GetValue() > t.GetRight().GetValue())
+                    Console.WriteLine(t.GetValue());
             PrintNodesWithTwoChildrenAndGreaterValue(t.GetLeft());
             PrintNodesWithTwoChildrenAndGreaterValue(t.GetRight());
         }
 
         #endregion
+
+        #region 6a4
+
+        public static bool AreTreesIdentical(BinNode<int> t1, BinNode<int> t2)
+        {
+            if (t1 == null && t2 == null)
+                return true;
+            if ((t1 == null && t2 != null) || (t1 != null && t2 == null))
+                return false && AreTreesIdentical(t1.GetLeft(), t2.GetLeft()) && AreTreesIdentical(t1.GetRight(), t2.GetRight());
+            if (t1.GetValue() == t2.GetValue())
+                return true && AreTreesIdentical(t1.GetLeft(), t2.GetLeft()) && AreTreesIdentical(t1.GetRight(), t2.GetRight());
+            return false && AreTreesIdentical(t1.GetLeft(), t2.GetLeft()) && AreTreesIdentical(t1.GetRight(), t2.GetRight());
+        }
+
+        public static bool AreMirror(BinNode<int> t1, BinNode<int> t2)
+        {
+            if (t1 == null && t2 == null)
+                return true;
+            if (t1 == null || t2 == null)
+                return false;
+            if (t1.GetValue() != t2.GetValue())
+                return false;
+            return AreMirror(t1.GetLeft(), t2.GetRight()) && AreMirror(t1.GetRight(), t2.GetLeft());
+        }
+
+        public static void UpdateLeavesWithParentValue(BinNode<int> tree)
+        {
+            if (tree == null)
+                return;
+            if (tree.HasLeft())
+            {
+                BinNode<int> left = tree.GetLeft();
+                if (!left.HasLeft() && !left.HasRight())
+                    left.SetValue(tree.GetValue());
+                UpdateLeavesWithParentValue(left);
+                if (tree.HasRight())
+                {
+                    BinNode<int> right = tree.GetRight();
+                    if (!right.HasLeft() && !right.HasRight())
+                        right.SetValue(tree.GetValue());
+                    UpdateLeavesWithParentValue(right);
+                }
+            }
+        }
+
+        public static BinNode<int> DeleteSingleChildNodes(BinNode<int> root)
+        {
+            if (root == null)
+                return null;
+            root.SetLeft(DeleteSingleChildNodes(root.GetLeft()));
+            root.SetRight(DeleteSingleChildNodes(root.GetRight()));
+            bool hasLeft = root.GetLeft() != null;
+            bool hasRight = root.GetRight() != null;
+            if (hasLeft && !hasRight || !hasLeft && hasRight)
+                return hasLeft ? root.GetLeft() : root.GetRight();
+            return root;
+        }
+
+        public static void AddLeftChildToLeaves(BinNode<int> tree)
+        {
+            if (tree == null)
+                return;
+            if (tree.GetLeft() == null && tree.GetRight() == null)
+            {
+                tree.SetLeft(new BinNode<int>(tree.GetValue()));
+                return;
+            }
+            AddLeftChildToLeaves(tree.GetLeft());
+            AddLeftChildToLeaves(tree.GetRight());
+        }
+
+        public static void AddSiblingToSingleChild(BinNode<int> tree)
+        {
+            if (tree == null)
+                return;
+            bool hasLeft = tree.GetLeft() != null;
+            bool hasRight = tree.GetRight() != null;
+            if (hasLeft && !hasRight)
+                tree.SetRight(new BinNode<int>(tree.GetLeft().GetValue() - 1));
+            else if (!hasLeft && hasRight)
+                tree.SetLeft(new BinNode<int>(tree.GetRight().GetValue() - 1));
+            if (hasLeft)
+                AddSiblingToSingleChild(tree.GetLeft());
+            if (hasRight)
+                AddSiblingToSingleChild(tree.GetRight());
+        }
+
+        public static int CountNodesAtLevel(BinNode<int> tree, int level)
+        {
+            if (tree == null || level < 0)
+                return 0;
+            if (level == 0)
+                return 1;
+            int leftCount = CountNodesAtLevel(tree.GetLeft(), level - 1);
+            int rightCount = CountNodesAtLevel(tree.GetRight(), level - 1);
+            return leftCount + rightCount;
+        }
+
+        public static Node<char> GetTreeFence(BinNode<char> root)
+        {
+            if (root == null)
+                return null;
+            Node<char> head = null;
+            Node<char> tail = null;
+            void Append(Node<char> node)
+            {
+                if (head == null)
+                {
+                    head = node;
+                    tail = node;
+                }
+                else
+                {
+                    tail.SetNext(node);
+                    tail = node;
+                }
+            }
+            if (root.GetLeft() == null && root.GetRight() == null)
+            {
+                Append(new Node<char>(root.GetValue()));
+                return head;
+            }
+            Stack<BinNode<char>> stack = new Stack<BinNode<char>>();
+            BinNode<char> current = root;
+            while (current != null)
+            {
+                if (current.GetRight() != null)
+                {
+                    stack.Push(current.GetRight());
+                    current = current.GetRight();
+                }
+                else if (current.GetLeft() != null)
+                    current = current.GetLeft();
+                else
+                    break;
+            }
+            while (!stack.IsEmpty())
+            {
+                BinNode<char> node = stack.Pop();
+                Append(new Node<char>(node.GetValue()));
+            }
+            Append(new Node<char>(root.GetValue()));
+            current = root;
+            while (current != null)
+            {
+                if (current.GetLeft() != null)
+                {
+                    Append(new Node<char>(current.GetLeft().GetValue()));
+                    current = current.GetLeft();
+                }
+                else if (current.GetRight() != null)
+                    current = current.GetRight();
+                else
+                    break;
+            }
+            return head;
+        }
+
+
+        public static bool HasAscendingPath(BinNode<int> tree, int prev = int.MinValue)
+        {
+            if (tree == null) return false;
+            if (tree.GetValue() < prev) return false;
+            if (tree.GetLeft() == null && tree.GetRight() == null) return true;
+            return HasAscendingPath(tree.GetLeft(), tree.GetValue()) || HasAscendingPath(tree.GetRight(), tree.GetValue());
+        }
+
+        public static int FindMaxPathSum(BinNode<int> tree)
+        {
+            if (tree == null) return int.MinValue;
+            int leftSum = FindMaxPathSum(tree.GetLeft());
+            int rightSum = FindMaxPathSum(tree.GetRight());
+            if (tree.GetLeft() == null && tree.GetRight() == null)
+                return tree.GetValue();
+            if (tree.GetLeft() == null) return tree.GetValue() + rightSum;
+            if (tree.GetRight() == null) return tree.GetValue() + leftSum;
+            return tree.GetValue() + Math.Max(leftSum, rightSum);
+        }
+
+        #endregion
+
     }
 }
