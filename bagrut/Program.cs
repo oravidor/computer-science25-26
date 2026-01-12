@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -316,6 +317,225 @@ namespace Bagruts
          * 4: Foo4, Foo2, T
          * 5: Foo1, F
          */
+        #endregion
+
+        #endregion
+
+        #region 2023 381
+
+        #region 5
+
+        internal class NumCount
+        {
+            private int num;
+            private int count;
+
+            public NumCount(int num, int count)
+            {
+                this.num = num;
+                this.count = count;
+            }
+
+            public void SetNum(int Num)
+            {
+                num = Num;
+            }
+            public int GetNum()
+            {
+                return num;
+            }
+            public int GetCount()
+            {
+                return count;
+            }
+            public void SetCount(int Count)
+            {
+                count = Count;
+            }
+        }
+
+        internal class OrderedList
+        {
+            private Node<NumCount> lst;
+
+            public OrderedList(Node<NumCount> lst)
+            {
+                this.lst = lst;
+            }
+
+            //א1
+            public void InsertNum(int x)
+            {
+                Node<NumCount> temp = lst;
+                while(temp != null)
+                {
+                    if (temp.GetValue().GetNum() == x)
+                    {
+                        temp.GetValue().SetCount(temp.GetValue().GetCount() + 1);
+                        return;
+                    }
+                    temp = temp.GetNext();
+                }
+                temp = lst;
+                bool isAdded = false;
+                NumCount add = new NumCount(x, 1);
+                Node<NumCount> addlst = new Node<NumCount>(add);
+                if(temp.GetValue().GetNum() > x)
+                {
+                    addlst.SetNext(temp);
+                    temp.SetNext(addlst);
+                    isAdded = true;
+                }
+                while (!isAdded)
+                {
+                    if (temp.GetNext().GetValue().GetNum() > x)
+                    {
+                        addlst.SetNext(temp.GetNext());
+                        temp.SetNext(addlst);
+                        isAdded = true;
+                    }
+                    else if (temp.GetNext() == null)
+                    {
+                        temp.SetNext(addlst);
+                        isAdded = true;
+                    }
+                    temp = temp.GetNext();
+                }
+            }
+            #region פתרונות טובים יותר
+
+            public void InsertNumRecursive(int x)
+            {
+                lst = InsertRec(lst, x);
+            }
+
+            private Node<NumCount> InsertRec(Node<NumCount> node, int x)
+            {
+                // רשימה ריקה או מקום נכון להוספה
+                if (node == null || node.GetValue().GetNum() > x)
+                {
+                    return new Node<NumCount>(new NumCount(x, 1), node);
+                }
+
+                // המספר כבר קיים
+                if (node.GetValue().GetNum() == x)
+                {
+                    node.GetValue().SetCount(node.GetValue().GetCount() + 1);
+                    return node;
+                }
+
+                // ממשיכים רקורסיה
+                node.SetNext(InsertRec(node.GetNext(), x));
+                return node;
+            }
+
+
+
+            public void InsertNumEfficient(int x)
+            {
+                // רשימה ריקה
+                if (lst == null)
+                {
+                    lst = new Node<NumCount>(new NumCount(x, 1));
+                    return;
+                }
+
+                // הוספה לראש
+                if (lst.GetValue().GetNum() > x)
+                {
+                    lst = new Node<NumCount>(new NumCount(x, 1), lst);
+                    return;
+                }
+
+                Node<NumCount> curr = lst;
+
+                while (curr != null)
+                {
+                    // המספר כבר קיים
+                    if (curr.GetValue().GetNum() == x)
+                    {
+                        curr.GetValue().SetCount(curr.GetValue().GetCount() + 1);
+                        return;
+                    }
+
+                    // מקום נכון להוספה באמצע
+                    if (curr.GetNext() == null || curr.GetNext().GetValue().GetNum() > x)
+                    {
+                        curr.SetNext(new Node<NumCount>(new NumCount(x, 1), curr.GetNext()));
+                        return;
+                    }
+
+                    curr = curr.GetNext();
+                }
+            }
+
+            #endregion
+
+
+            //א2
+            //O(n) - בגלל שעוברים על השרשרת פעם אחת כל פעם
+
+            //ב
+            public int ValueN(int n)
+            {
+                Node<NumCount> temp = lst;
+                int num = 0;
+                while (temp != null)
+                {
+                    num += temp.GetValue().GetCount();
+                    if(num >= n)
+                        return temp.GetValue().GetNum();
+                    temp = temp.GetNext();
+                }
+                return -1;
+            }
+        }
+
+        #endregion
+
+        #region 6
+
+        public static bool IsPrime(int n)
+        {
+            if (n <= 1)
+                return false;
+            for (int i = 2; i * i <= n; i++)
+                if (n % i == 0)
+                    return false;
+            return true;
+        }
+
+        //א
+        public static bool AddNodes(BinNode<int> tr)
+        {
+            int val = tr.GetValue();
+            if(IsPrime(val))
+                return false;
+            for(int R = 2; R < val; R ++)
+                for(int L = 2; L < val; L++)
+                    if(L *  R == val)
+                    {
+                        BinNode<int> addL = new BinNode<int>(L);
+                        BinNode<int> addR = new BinNode<int>(R);
+                        tr.SetLeft(addL);
+                        tr.SetRight(addR);
+                    }
+            return true;
+        }
+
+
+        public static void What(BinNode<int> tr)
+        {
+            if(AddNodes(tr))
+            {
+                What(tr.GetLeft());
+                What(tr.GetRight());
+            }
+        }
+        //ב2
+        //הפעולה מחלקת את הצמתים על שהערכים האחרונים של העץ הם מספרים ראשונים
+
+
         #endregion
 
         #endregion

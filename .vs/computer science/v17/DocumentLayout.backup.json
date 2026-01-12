@@ -3,8 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\avido\\source\\repos\\computer-science25-26\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6A3FB9A2-4DAA-43C4-868B-7A83A6784873}|BinaryTree\\BinaryTree.csproj|c:\\users\\avido\\source\\repos\\computer-science25-26\\binarytree\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6A3FB9A2-4DAA-43C4-868B-7A83A6784873}|BinaryTree\\BinaryTree.csproj|solutionrelative:binarytree\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{05B263BC-E512-4CC0-A073-C1C185E76225}|bagrut\\Bagruts.csproj|c:\\users\\avido\\source\\repos\\computer-science25-26\\bagrut\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{05B263BC-E512-4CC0-A073-C1C185E76225}|bagrut\\Bagruts.csproj|solutionrelative:bagrut\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{05B263BC-E512-4CC0-A073-C1C185E76225}|bagrut\\Bagruts.csproj|c:\\users\\avido\\source\\repos\\computer-science25-26\\bagrut\\binnodet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{05B263BC-E512-4CC0-A073-C1C185E76225}|bagrut\\Bagruts.csproj|solutionrelative:bagrut\\binnodet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{05B263BC-E512-4CC0-A073-C1C185E76225}|bagrut\\Bagruts.csproj|c:\\users\\avido\\source\\repos\\computer-science25-26\\bagrut\\node.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{05B263BC-E512-4CC0-A073-C1C185E76225}|bagrut\\Bagruts.csproj|solutionrelative:bagrut\\node.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -30,15 +38,41 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "BinNodeT.cs",
+              "DocumentMoniker": "C:\\Users\\avido\\source\\repos\\computer-science25-26\\bagrut\\BinNodeT.cs",
+              "RelativeDocumentMoniker": "bagrut\\BinNodeT.cs",
+              "ToolTip": "C:\\Users\\avido\\source\\repos\\computer-science25-26\\bagrut\\BinNodeT.cs",
+              "RelativeToolTip": "bagrut\\BinNodeT.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-12T09:56:00.172Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Node.cs",
+              "DocumentMoniker": "C:\\Users\\avido\\source\\repos\\computer-science25-26\\bagrut\\Node.cs",
+              "RelativeDocumentMoniker": "bagrut\\Node.cs",
+              "ToolTip": "C:\\Users\\avido\\source\\repos\\computer-science25-26\\bagrut\\Node.cs",
+              "RelativeToolTip": "bagrut\\Node.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAYAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-12T09:15:01.463Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\avido\\source\\repos\\computer-science25-26\\BinaryTree\\Program.cs",
-              "RelativeDocumentMoniker": "BinaryTree\\Program.cs",
-              "ToolTip": "C:\\Users\\avido\\source\\repos\\computer-science25-26\\BinaryTree\\Program.cs",
-              "RelativeToolTip": "BinaryTree\\Program.cs",
-              "ViewState": "AgIAAOgBAAAAAAAAAAAAwPQBAAAgAAAAAAAAAA==",
+              "DocumentMoniker": "C:\\Users\\avido\\source\\repos\\computer-science25-26\\bagrut\\Program.cs",
+              "RelativeDocumentMoniker": "bagrut\\Program.cs",
+              "ToolTip": "C:\\Users\\avido\\source\\repos\\computer-science25-26\\bagrut\\Program.cs",
+              "RelativeToolTip": "bagrut\\Program.cs",
+              "ViewState": "AgIAAPwBAAAAAAAAAADwvxcCAABNAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-30T10:52:23.557Z",
+              "WhenOpened": "2026-01-12T08:51:54.936Z",
               "EditorCaption": ""
             }
           ]

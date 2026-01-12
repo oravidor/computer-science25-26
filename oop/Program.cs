@@ -10,7 +10,7 @@ namespace Oop
     {
         static void Main(string[] args)
         {
-            Eratoasthenes();
+            //Eratoasthenes();
         }
 
         static void Eratoasthenes()
