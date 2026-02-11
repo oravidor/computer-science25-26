@@ -23,6 +23,23 @@ namespace Bagruts
             #endregion
 
             #endregion
+
+            #region tests 2021 381
+
+            #region Q1
+
+            bool b2021Q1 = IsDouble("a@a@");
+
+            #endregion
+
+            #region Q5
+
+            Node<int> Q5381 = new Node<int>(5, new Node<int>(1, new Node<int>(2, new Node<int>(8, new Node<int>(4)))));
+            Q5381 = Move(Q5381, 2);
+
+            #endregion
+
+            #endregion
         }
 
         #region 2024
@@ -74,11 +91,11 @@ namespace Bagruts
         {
             int count = 0;
             foreach (int i in arr)
-                if(i == num)
+                if (i == num)
                     count++;
             int[] newArr = new int[arr.Length - count];
-            for(int i = 0 , j = 0; i < arr.Length; i++)
-                if(arr[i] != num)
+            for (int i = 0, j = 0; i < arr.Length; i++)
+                if (arr[i] != num)
                 {
                     newArr[j] = arr[i];
                     j++;
@@ -147,21 +164,21 @@ namespace Bagruts
             public double Average()
             {
                 int sum = 0;
-                foreach(Subject sub in subArray)
+                foreach (Subject sub in subArray)
                     sum += sub.GetGrade();
                 return sum;
             }
             public bool IsExcellent()
             {
-                if(Average() < 85)
+                if (Average() < 85)
                     return false;
                 bool isOver100 = false;
-                foreach(Subject sub in subArray)
+                foreach (Subject sub in subArray)
                 {
                     int g = sub.GetGrade();
                     if (g < 54)
                         return false;
-                    if(g == 100)
+                    if (g == 100)
                         isOver100 = true;
                 }
                 return isOver100;
@@ -170,8 +187,8 @@ namespace Bagruts
 
         static void PrintExcellent(ReportCard[] reportCards)
         {
-            foreach(ReportCard reportCard in reportCards)
-                if(reportCard.IsExcellent())
+            foreach (ReportCard reportCard in reportCards)
+                if (reportCard.IsExcellent())
                     Console.WriteLine(reportCard.GetStuName());
         }
 
@@ -249,7 +266,7 @@ namespace Bagruts
                     {
                         nextNode = nextNode.GetNext();
                         removed++;
-                        current.SetNext(nextNode); 
+                        current.SetNext(nextNode);
                     }
                     current = current.GetNext();
                 }
@@ -367,7 +384,7 @@ namespace Bagruts
             public void InsertNum(int x)
             {
                 Node<NumCount> temp = lst;
-                while(temp != null)
+                while (temp != null)
                 {
                     if (temp.GetValue().GetNum() == x)
                     {
@@ -380,7 +397,7 @@ namespace Bagruts
                 bool isAdded = false;
                 NumCount add = new NumCount(x, 1);
                 Node<NumCount> addlst = new Node<NumCount>(add);
-                if(temp.GetValue().GetNum() > x)
+                if (temp.GetValue().GetNum() > x)
                 {
                     addlst.SetNext(temp);
                     temp.SetNext(addlst);
@@ -483,7 +500,7 @@ namespace Bagruts
                 while (temp != null)
                 {
                     num += temp.GetValue().GetCount();
-                    if(num >= n)
+                    if (num >= n)
                         return temp.GetValue().GetNum();
                     temp = temp.GetNext();
                 }
@@ -509,11 +526,11 @@ namespace Bagruts
         public static bool AddNodes(BinNode<int> tr)
         {
             int val = tr.GetValue();
-            if(IsPrime(val))
+            if (IsPrime(val))
                 return false;
-            for(int R = 2; R < val; R ++)
-                for(int L = 2; L < val; L++)
-                    if(L *  R == val)
+            for (int R = 2; R < val; R++)
+                for (int L = 2; L < val; L++)
+                    if (L * R == val)
                     {
                         BinNode<int> addL = new BinNode<int>(L);
                         BinNode<int> addR = new BinNode<int>(R);
@@ -526,7 +543,7 @@ namespace Bagruts
 
         public static void What(BinNode<int> tr)
         {
-            if(AddNodes(tr))
+            if (AddNodes(tr))
             {
                 What(tr.GetLeft());
                 What(tr.GetRight());
@@ -534,6 +551,99 @@ namespace Bagruts
         }
         //ב2
         //הפעולה מחלקת את הצמתים על שהערכים האחרונים של העץ הם מספרים ראשונים
+
+
+        #endregion
+
+        #endregion
+
+        #region 2021 381
+
+        #region 1
+
+        public static bool IsDouble(string str)
+        {
+            if (str.Length % 2 != 0)
+                return false;
+            string part1 = str.Substring(0, str.Length / 2);
+            string part2 = str.Substring(str.Length / 2);
+            return part1.Equals(part2);
+        }
+
+        #endregion
+
+        #region 2
+
+        internal class PairOfNums
+        {
+            private int num1;
+            private int num2;
+
+            public PairOfNums(int num1, int num2)
+            {
+                this.num1 = num1;
+                this.num2 = num2;
+            }
+
+            public void SetNum1(int num) { num1 = num; }
+            public int GetNum1() { return num1; }
+            public int GetNum2() { return num2; }
+            public void SetNum2(int num) { num2 = num; }
+
+            public bool EndStart()
+            {
+                int Num1 = num1;
+                while (Num1 >= 10)
+                    Num1 = Num1 / 10;
+                int Num2 = num2 % 10;
+                return Num1 == Num2;
+            }
+
+        }
+
+        public static PairOfNums[] Generate(int n)
+        {
+            PairOfNums[] pairOfNums = new PairOfNums[n];
+            Random random = new Random();
+            int index = 0;
+            do
+            {
+                int num1 = random.Next(0, 1000);
+                int num2 = random.Next(0, 1000);
+                PairOfNums pair = new PairOfNums(num1, num2);
+                if (pair.EndStart())
+                {
+                    pairOfNums[index] = pair;
+                    index++;
+                }
+            } while (index < n);
+            return pairOfNums;
+        }
+
+        #endregion
+
+        #region 5
+
+        public static Node<int> Move(Node<int> lst, int n)
+        {
+            if (n == 0)
+                return lst;
+            int length = 1;
+            Node<int> temp = lst;
+            while (temp.GetNext() != null)
+            {
+                length++;
+                temp = temp.GetNext();
+            }
+            int index = length - n;
+            Node<int> prev = lst;
+            for (int i = 1; i < index; i++)
+                prev = prev.GetNext();
+            Node<int> newHead = prev.GetNext();
+            prev.SetNext(null);
+            temp.SetNext(lst);
+            return newHead;
+        }
 
 
         #endregion
