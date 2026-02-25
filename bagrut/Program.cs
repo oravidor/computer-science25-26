@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Bagruts
@@ -36,6 +37,22 @@ namespace Bagruts
 
             Node<int> Q5381 = new Node<int>(5, new Node<int>(1, new Node<int>(2, new Node<int>(8, new Node<int>(4)))));
             Q5381 = Move(Q5381, 2);
+
+            #endregion
+
+            #endregion
+
+            #region test 2025
+
+            #region Q10
+
+            //Tester();
+
+            #endregion
+
+            #region Q11
+
+            //test();
 
             #endregion
 
@@ -316,6 +333,283 @@ namespace Bagruts
 
         #endregion
 
+        #region 3
+
+        //ב
+        static bool IsLeftK(BinNode<int> root, int k, int left = 0)
+        {
+            if (root == null)
+                return true;
+            if (left > k)
+                return false;
+            return IsLeftK(root.GetLeft(), k, left + 1) && IsLeftK(root.GetRight(), k, left);
+        }
+
+        #endregion
+
+        #region 10
+
+        public class Animal
+        {
+            private string color;
+            private int weight;
+
+            public Animal(string color, int weight)
+            {
+                this.color = color;
+                this.weight = weight;
+            }
+
+            public string GetColor()
+            {
+                return this.color;
+            }
+
+            public void SetColor(string color)
+            {
+                this.color = color;
+            }
+
+            public int GetWeight()
+            {
+                return this.weight;
+            }
+
+            public void SetWeight(int weight)
+            {
+                this.weight = weight;
+            }
+
+            public override string ToString()
+            {
+                return "My color is " + this.color + "! And I weigh " + this.weight + " kilos!";
+            }
+        }
+
+        public class Bird : Animal
+        {
+            private bool isFlying;
+
+            public Bird(string color, int weight, bool isFlying)
+                : base(color, weight)
+            {
+                this.isFlying = isFlying;
+            }
+
+            public bool GetIsFlying()
+            {
+                return this.isFlying;
+            }
+
+            public void SetIsFlying(bool isFlying)
+            {
+                this.isFlying = isFlying;
+            }
+
+            public void Zoo()
+            {
+                Console.WriteLine("Hello");
+            }
+
+            public override string ToString()
+            {
+                return $"I'm a bird! My color is {base.GetColor()}! And I weigh {base.GetWeight()} kilos!";
+            }
+        }
+
+        public class Parrot : Bird
+        {
+            private bool isTalking;
+
+            public Parrot(string color, int weight, bool isFlying, bool isTalking)
+                : base(color, weight, isFlying)
+            {
+                this.isTalking = isTalking;
+            }
+
+            public bool GetIsTalking()
+            {
+                return this.isTalking;
+            }
+
+            public void SetIsTalking(bool isTalking)
+            {
+                this.isTalking = isTalking;
+            }
+
+            public override string ToString()
+            {
+                return $"I'm a parrot! My color is {base.GetColor()}!";
+            }
+        }
+
+        public class Fish : Animal
+        {
+            private string waterType;
+
+            public Fish(string color, int weight, string waterType)
+                : base(color, weight)
+            {
+                this.waterType = waterType;
+            }
+
+            public string GetWaterType()
+            {
+                return this.waterType;
+            }
+
+            public void SetWaterType(string waterType)
+            {
+                this.waterType = waterType;
+            }
+
+            public override string ToString()
+            {
+                return $"My color is {base.GetColor()}! And I weigh {base.GetWeight()} kilos!";
+            }
+        }
+
+        public class Snake : Animal
+        {
+            private int length;
+            private bool isVenomous;
+
+            public Snake(string color, int weight, int length, bool isVenomous)
+                : base(color, weight)
+            {
+                this.length = length;
+                this.isVenomous = isVenomous;
+            }
+
+            public int GetLength()
+            {
+                return this.length;
+            }
+
+            public void SetLength(int length)
+            {
+                this.length = length;
+            }
+
+            public bool GetIsVenomous()
+            {
+                return this.isVenomous;
+            }
+
+            public void SetIsVenomous(bool isVenomous)
+            {
+                this.isVenomous = isVenomous;
+            }
+
+            public override string ToString()
+            {
+                string line = "I'm a snake! ";
+                if (this.isVenomous)
+                    line += "I'm venomous, be careful!";
+                else
+                    line += "I'm not venomous!";
+                line += $"My color is {base.GetColor()}! And I weigh {base.GetWeight()} kilos!";
+                return line;
+            }
+        }
+
+        static void Tester()
+        {
+            //ב
+            Animal[] animals = new Animal[5];
+            animals[0] = new Bird("white", 4, false);
+            animals[1] = new Fish("blue", 3, "sweet water");
+            animals[2] = new Parrot("brown", 12, true, true);
+            animals[3] = new Snake("gray", 2, 6, true);
+            animals[4] = new Snake("black", 3, 4, false);
+
+            //ג1
+            for(int i = 0; i < animals.Length; i++)
+                Console.WriteLine(animals[i]);
+
+            //ג2
+            for (int i = 0; i < animals.Length; i++)
+                if (animals[i] is Bird)
+                    ((Bird)animals[i]).Zoo();
+        }
+
+        #endregion
+
+        #region 11
+
+        public class One
+        {
+            public static int count = 0;
+            private int number;
+
+            public One()
+            {
+                count++;
+                number = count;
+            }
+
+            public One(int num)
+            {
+                number = num;
+            }
+
+            public override string ToString()
+            {
+                return count + ", " + number;
+            }
+        }
+
+        public class Two : One
+        {
+            private string strTwo;
+
+            public Two()
+            {
+                strTwo = "Fast";
+            }
+
+            public Two(string s) : base(15)
+            {
+                strTwo = s;
+            }
+
+            public override string ToString()
+            {
+                return base.ToString() + " " + strTwo;
+            }
+        }
+
+        public class Three : Two
+        {
+            private string strThree;
+
+            public Three(string s)
+            {
+                strThree = s;
+            }
+
+            public override string ToString()
+            {
+                return base.ToString() + " " + strThree;
+            }
+        }
+
+        static void test()
+        {
+            One[] arr = new One[6];
+            arr[0] = new Two();
+            arr[1] = new Three("car");
+            arr[2] = new Three("Horse");
+            arr[3] = new Two("Small");
+            arr[4] = new Two("Tall");
+            arr[5] = new One();
+
+            for (int i = 0; i < arr.Length; i++)
+                Console.WriteLine(arr[i]);
+        }
+
+        #endregion
+
         #region 12
 
         //ב1
@@ -334,6 +628,149 @@ namespace Bagruts
          * 4: Foo4, Foo2, T
          * 5: Foo1, F
          */
+        #endregion
+
+        #endregion
+
+        #region 2023
+
+        #region Q5
+
+        internal class MyTime
+        {
+            private int myMinute; // 0-59
+            private int myHour;   // 7-23
+
+            // Constructor
+            public MyTime(int myHour, int myMinute)
+            {
+                SetMyHour(myHour);
+                SetMyMinute(myMinute);
+            }
+
+            // Getters
+            public int GetMyHour()
+            {
+                return myHour;
+            }
+
+            public int GetMyMinute()
+            {
+                return myMinute;
+            }
+
+            // Setters עם בדיקת תקינות
+            public void SetMyHour(int myHour)
+            {
+                if (myHour >= 7 && myHour <= 23)
+                    this.myHour = myHour;
+            }
+
+            public void SetMyMinute(int myMinute)
+            {
+                if (myMinute >= 0 && myMinute <= 59)
+                    this.myMinute = myMinute;
+            }
+
+            // מחזירה true אם הזמן הנוכחי מוקדם מ-other
+            public bool Before(MyTime other)
+            {
+                if (this.myHour < other.myHour)
+                    return true;
+
+                if (this.myHour == other.myHour &&
+                    this.myMinute < other.myMinute)
+                    return true;
+
+                return false;
+            }
+
+            // מחזירה הפרש בדקות בערך מוחלט
+            public int Diff(MyTime other)
+            {
+                int thisTotalMinutes = this.myHour * 60 + this.myMinute;
+                int otherTotalMinutes = other.myHour * 60 + other.myMinute;
+
+                return Math.Abs(thisTotalMinutes - otherTotalMinutes);
+            }
+        }
+        public class Parking
+        {
+            private string id;     // מספר רכב
+            private MyTime In;     // זמן כניסה
+            private MyTime Out;    // זמן יציאה
+
+            // Constructor
+            public Parking(string id, MyTime In, MyTime Out)
+            {
+                this.id = id;
+                this.In = In;
+                this.Out = Out;
+            }
+
+            // Getters
+            public string GetId()
+            {
+                return id;
+            }
+
+            public MyTime GetIn()
+            {
+                return In;
+            }
+
+            public MyTime GetOut()
+            {
+                return Out;
+            }
+
+            // Setters
+            public void SetId(string id)
+            {
+                this.id = id;
+            }
+
+            public void SetIn(MyTime In)
+            {
+                this.In = In;
+            }
+
+            public void SetOut(MyTime Out)
+            {
+                this.Out = Out;
+            }
+
+            //1ב
+            public int Total()
+            {
+                return In.Diff(Out);
+            }
+        }
+
+        // א
+        static void First(Parking[] cars)
+        {
+            Parking firstCar = cars[0];
+            for (int i = 1; i < cars.Length; i++)
+                if (cars[i].GetIn().Before(firstCar.GetIn()))
+                    firstCar = cars[i];
+            Console.WriteLine(firstCar.GetId());
+        }
+
+        //ב2
+        static int SumMoney(Parking[] cars)
+        {
+            int sumMoney = 0;
+            int time;
+            foreach (Parking car in cars)
+            {
+                time = car.Total();
+                if (time > 120)
+                    sumMoney += time - 120;
+            }
+            return sumMoney;
+        }
+
         #endregion
 
         #endregion
